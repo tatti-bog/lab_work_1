@@ -149,6 +149,7 @@
 ```java
 import java.util.Scanner;
 public class Main {
+   {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -159,41 +160,46 @@ public class Main {
         System.out.print("Введите b: ");
         double b = scanner.nextDouble();
 
-          if (b == 0) {
-              System.out.println("b не может быть равно 0");
-              return;
-          }
 
-          if (b > 0) {
-              if (a == 0) {
-                  System.out.println("x ≠ 0");
-              }
+        if (b == 0.0) {
+            System.out.println("b не может быть равно 0");
+            return;
+        }
 
-              else if (a > 0) {
-                  System.out.println("x < 0 или x ≥ " + a);
-              }
+        if (b > 0.0) {
 
-              else {
-                  System.out.println("x ≤ " + a + " или x > 0");
-              }
-          }
+            if (a == 0.0) {
+                System.out.println("x ≠ 0");
+            }
 
-          else {
-              if (a == 0) {
-                  System.out.println("Нет решений для x");
-              }
-              else if (a > 0) {
-                  System.out.println("0 < x ≤ " + a);
-              }
-              else {
-                  System.out.println(a + " ≤ x ≤ 0");
-              }
-          }
+            else if (a > 0.0) {
+                System.out.println("x < 0 или x ≥ " + a);
+            }
 
-                scanner.close();
+            else {
+                System.out.println("x ≤ " + a + " или x > 0");
+            }
+
+        }
+
+        else {
+
+            if (a == 0.0) {
+                System.out.println("Нет решений для x");
+            }
+
+            else if (a > 0.0) {
+                System.out.println("0 < x ≤ " + a);
+            }
+
+            else {
+                System.out.println(a + " ≤ x ≤ 0");
+            }
+        }
+
+        scanner.close();
     }
 }
-
 ```
 
 ### 6. Анализ правильности решения
