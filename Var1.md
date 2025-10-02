@@ -146,79 +146,164 @@
 ### 5. Программа
 
 ```java
-import java.io.PrintStream;
 import java.util.Scanner;
-
 public class Main {
-    // Объявляем объект класса Scanner для ввода данных
-    public static Scanner in = new Scanner(System.in);
-    // Объявляем объект класса PrintStream для вывода данных
-    public static PrintStream out = System.out;
-
     public static void main(String[] args) {
-        // Считывание двух вещественных чисел a и b из консоли
-        double a = in.nextDouble();
-        double b = in.nextDouble();
 
-        
-        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите a: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Введите b: ");
+        double b = scanner.nextDouble();
+
+          if (b == 0) {
+              System.out.println("b не может быть равно 0");
+              return;
+          }
+
+          if (b > 0) {
+              if (a == 0) {
+                  System.out.println("x ≠ 0");
+              }
+
+              else if (a > 0) {
+                  System.out.println("x < 0 или x ≥ " + a);
+              }
+
+              else {
+                  System.out.println("x ≤ " + a + " или x > 0");
+              }
+          }
+
+          else {
+              if (a == 0) {
+                  System.out.println("Нет решений для x");
+              }
+              else if (a > 0) {
+                  System.out.println("0 < x ≤ " + a);
+              }
+              else {
+                  System.out.println(a + " ≤ x ≤ 0");
+              }
+          }
+
+                scanner.close();
     }
 }
+
 ```
 
 ### 6. Анализ правильности решения
 
 Программа работает корректно на всем множестве решений с учетом ограничений.
 
-1. Тест на ``:
+1. Тест на `a=0 b=0`:
 
     - **Input**:
         ```
-        
+        0 0
         ```
 
     - **Output**:
         ```
-        
+        b не может быть равно 0
         ```
 
-2. Тест на ``:
+2. Тест на `a=0 b≠0`:
 
     - **Input**:
         ```
-        
+        0 2
         ```
 
     - **Output**:
         ```
-        
+        x ≠ 0
         ```
 
-3. Тест на ``:
+3. Тест на `a≠0 b=0`:
 
     - **Input**:
         ```
-        
+        2 0
         ```
 
     - **Output**:
         ```
-        
+        b не может быть равно 0
         ```
 
-4. Тест на ``  ``:
+4. Тест на `b>0 a=0`:
 
     - **Input**:
         ```
-       
+       -3 0
         ```
 
     - **Output**:
         ```
-        
+        Нет решений для x
+        ```
+5. Тест на `b>0 a>0`:
+
+    - **Input**:
+        ```
+       4 3
         ```
 
-5. Тест на ограничение задачи:
+    - **Output**:
+        ```
+        x < 0 или x ≥ 3.0
+        ```
+6. Тест на `b>0 a<0`:
+
+    - **Input**:
+        ```
+       4 -5
+        ```
+
+    - **Output**:
+        ```
+        x ≤ -5.0 или x > 0
+        ```
+7. Тест на `b<0 a=0`:
+
+    - **Input**:
+        ```
+       -6 0
+        ```
+
+    - **Output**:
+        ```
+        Нет решений для x
+        ```
+ 6. Тест на `b<0 a>0`:
+
+    - **Input**:
+        ```
+       -5 4
+        ```
+
+    - **Output**:
+        ```
+        0 < x ≤ 4.0
+        
+        ```
+        
+7. Тест на `b<0 a<0`:
+
+    - **Input**:
+        ```
+       -6 -7
+        ```
+
+    - **Output**:
+        ```
+        -6.0 ≤ x ≤ 0
+        ```   
+10. Тест на ограничение задачи:
 
     - **Input**:
         ```
